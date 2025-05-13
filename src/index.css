@@ -1,0 +1,77 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(63, 59, 59);
+}
+
+h1 {
+  color: rgb(247, 227, 227);
+}
+
+/* layout */
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.col {
+  width: 100%;
+}
+
+.col-50 {
+  width: 50%;
+}
+
+/* card */
+
+.card-container {
+  border-radius: 20px;
+  margin: 40px;
+  background-color: rgb(207, 207, 207);
+}
+
+img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.actor-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.awards-card {
+  margin-top: 20px;
+}
+
+.biography-card {
+  margin-top: 20px;
+  text-align: start;
+}
+
+/* padding */
+
+.p-20 {
+  padding: 20px;
+}
+
+/* margin */
+
+.me-20 {
+  margin-right: 20px;
+}
+
+/* flex */
+
+.d-flex {
+  display: flex;
+}

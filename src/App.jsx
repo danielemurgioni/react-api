@@ -22,31 +22,44 @@ function App() {
   return (
     <>
       <header>
-        <h1>React API</h1>
+        <div className="container">
+          <h1>React API</h1>
+        </div>
       </header>
       <main>
         <div className="container">
           <div className="row">
             <div className="col">
               {arrActor.map((item) => (
-                <div className="card" key={item.id}>
-                  <div className="name">
-                    {item.name}
-                  </div>
-                  <div className="born">
-                    {item.birth_year}
-                  </div>
-                  <div className="nation">
-                    {item.nationality}
-                  </div>
-                  <div className="biography">
-                    {item.biography}
-                  </div>
-                  <div className="img">
-                    <img src={item.image} />
-                  </div>
-                  <div className="awards">
-                    {item.awards}
+                <div className="card-container p-20" key={item.id}>
+                  <div className="d-flex">
+                    <div className="col-50 me-20">
+                      <div className="img-card">
+                        <img src={item.image} />
+                      </div>
+                    </div>
+                    <div className="col-50">
+                      <div className="actor-info">
+                        <div className="name-card">
+                          <h2>{item.name}</h2>
+                        </div>
+                        <div className="born-card">
+                          <span>Born: {item.birth_year}</span>
+                        </div>
+                        <div className="nation-card">
+                          <span>Nationality: {item.nationality}</span>
+                        </div>
+                        <div className="awards-card">
+                          <h4>Won Awards</h4>
+                          <span>{item.awards}</span>
+                        </div>
+                        <div className="biography-card">
+                          <h4>Biography</h4>
+                          <p>{item.biography}</p>
+                        </div>
+
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}

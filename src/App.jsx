@@ -14,6 +14,7 @@ function App() {
     axios.get(endpoint).then((resp) => { console.log(resp.data), setArrActor(resp.data) })
   }
 
+  // al montaggio della pagina chiamo la funzione
   useEffect(() => {
     fetchActors()
   }, [])
@@ -25,13 +26,34 @@ function App() {
       </header>
       <main>
         <div className="container">
-          <ul>
-            {arrActor.map((item) => (
-              <li key={item.id}>{item.name}</li>
-            ))}
-          </ul>
+          <div className="row">
+            <div className="col">
+              {arrActor.map((item) => (
+                <div className="card" key={item.id}>
+                  <div className="name">
+                    {item.name}
+                  </div>
+                  <div className="born">
+                    {item.birth_year}
+                  </div>
+                  <div className="nation">
+                    {item.nationality}
+                  </div>
+                  <div className="biography">
+                    {item.biography}
+                  </div>
+                  <div className="img">
+                    <img src={item.image} />
+                  </div>
+                  <div className="awards">
+                    {item.awards}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-      </main>
+      </main >
     </>
   )
 

@@ -1,5 +1,5 @@
 import axios from "axios"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 // API delle attrici
 const endpoint = "https://lanciweb.github.io/demo/api/actresses/"
@@ -14,6 +14,10 @@ function App() {
     axios.get(endpoint).then((resp) => { console.log(resp.data), setArrActor(resp.data) })
   }
 
+  useEffect(() => {
+    fetchActors()
+  }, [])
+
   return (
     <>
       <header>
@@ -21,7 +25,6 @@ function App() {
       </header>
       <main>
         <div className="container">
-          <button onClick={fetchActors}>Visualizza le attrici</button>
           <ul>
             {arrActor.map((item) => (
               <li key={item.id}>{item.name}</li>
